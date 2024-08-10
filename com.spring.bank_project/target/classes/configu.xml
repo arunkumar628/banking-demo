@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+           
+    <bean class="com.spring.bank_project.pojo.UserInfo" name="userInfoBean">
+    
+    <constructor-arg value="8974 2589 6512" type="String"/>
+    <constructor-arg value="6281508053" type="String"/>
+    <property name="customer_Name" value="" />
+        <!--<property name="customer_adharNo" value="8974 2589 6512" />
+        <property name="customer_MobileNo" value="6281508053" />-->
+        <property name="balance" value="0.0" />
+    </bean>
+    
+    <bean class="com.spring.bank_project.pojo.UserNameAndPwd" name="userNameAndPwdBean">
+		<property name="userName" value="" />
+        <property name="password" value="" />
+	</bean>
+    <bean class="com.spring.bank_project.serviceImpl.LogicalOperationServiceImpl" 
+       name ="logicalOperationServiceImplBean">
+       <constructor-arg ref="userInfoBean" />
+       <constructor-arg ref="userNameAndPwdBean" />
+    </bean>
+    
+    
+</beans>               
